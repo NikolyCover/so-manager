@@ -1,4 +1,4 @@
-package br.unioeste.so_manager.so_manager;
+package br.unioeste.so_manager.so_manager.employee;
 
 import br.unioeste.so_manager.so_manager.adress.Address;
 import br.unioeste.so_manager.so_manager.email.Email;
