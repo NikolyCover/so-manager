@@ -14,6 +14,5 @@ public class ClientEmail extends Email {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id")
     private Client client;
 }
