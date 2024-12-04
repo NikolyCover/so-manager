@@ -5,7 +5,7 @@ import lombok.*;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor
-@Getter @Setter @ToString
+@Data @Builder
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
