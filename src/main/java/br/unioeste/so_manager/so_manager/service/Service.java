@@ -1,8 +1,11 @@
 package br.unioeste.so_manager.so_manager.service;
 
+import br.unioeste.so_manager.so_manager.service_order.ServiceOrder;
 import br.unioeste.so_manager.so_manager.service_type.ServiceType;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @AllArgsConstructor @NoArgsConstructor
@@ -15,6 +18,8 @@ public class Service {
     private Double amountCharged;
 
     @ManyToOne
-    @JoinColumn(name = "service_type_id")
     private ServiceType serviceType;
+
+    @ManyToMany(mappedBy = "services")
+    private List<ServiceOrder> serviceOrder;
 }

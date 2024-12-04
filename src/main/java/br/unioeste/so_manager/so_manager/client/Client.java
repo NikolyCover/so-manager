@@ -1,8 +1,9 @@
 package br.unioeste.so_manager.so_manager.client;
 
 import br.unioeste.so_manager.so_manager.adress.Address;
-import br.unioeste.so_manager.so_manager.email.Email;
+import br.unioeste.so_manager.so_manager.email.client.ClientEmail;
 import br.unioeste.so_manager.so_manager.phone.Phone;
+import br.unioeste.so_manager.so_manager.phone.client.ClientPhone;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,9 +30,9 @@ public class Client {
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToMany
-    private List<Email> emails;
+    @OneToMany(mappedBy = "client")
+    private List<ClientEmail> emails;
 
-    @OneToMany
-    private List<Phone> phones;
+    @OneToMany(mappedBy = "client")
+    private List<ClientPhone> phones;
 }

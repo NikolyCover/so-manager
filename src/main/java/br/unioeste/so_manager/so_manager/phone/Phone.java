@@ -3,14 +3,8 @@ package br.unioeste.so_manager.so_manager.phone;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
-@AllArgsConstructor @NoArgsConstructor
-@Data @ToString @Builder
-public class Phone {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+@MappedSuperclass
+public abstract class Phone {
     private String number;
 
     @ManyToOne

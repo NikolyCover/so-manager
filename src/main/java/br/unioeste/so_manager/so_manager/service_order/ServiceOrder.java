@@ -1,5 +1,7 @@
 package br.unioeste.so_manager.so_manager.service_order;
 
+import br.unioeste.so_manager.so_manager.client.Client;
+import br.unioeste.so_manager.so_manager.employee.Employee;
 import br.unioeste.so_manager.so_manager.service.Service;
 import jakarta.persistence.*;
 import lombok.*;
@@ -19,9 +21,14 @@ public class ServiceOrder {
     @Lob
     private String description;
 
-    @OneToMany
-    @JoinColumn(name = "service_id")
+    @ManyToMany
     private List<Service> services;
+
+    @ManyToOne
+    private Employee responsible;
+
+    @ManyToOne
+    private Client client;
 
     @Transient
     public Double getTotalAmount() {

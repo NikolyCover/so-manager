@@ -1,16 +1,10 @@
 package br.unioeste.so_manager.so_manager.email;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
 
-@Entity
-@AllArgsConstructor @NoArgsConstructor
-@Data @Builder @ToString
-public class Email {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+@MappedSuperclass
+public abstract class Email {
     @Column(unique = true)
     private String address;
 }

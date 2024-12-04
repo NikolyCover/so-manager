@@ -1,8 +1,9 @@
 package br.unioeste.so_manager.so_manager.employee;
 
 import br.unioeste.so_manager.so_manager.adress.Address;
-import br.unioeste.so_manager.so_manager.email.Email;
+import br.unioeste.so_manager.so_manager.email.employee.EmployeeEmail;
 import br.unioeste.so_manager.so_manager.phone.Phone;
+import br.unioeste.so_manager.so_manager.phone.employee.EmployeePhone;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,9 +19,6 @@ public class Employee {
 
     private String name;
 
-    @Column(unique=true)
-    private String cpf;
-
     private String addressNumber;
 
     private String addressComplement;
@@ -29,9 +27,9 @@ public class Employee {
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToMany
-    private List<Email> emails;
+    @OneToMany(mappedBy = "employee")
+    private List<EmployeeEmail> emails;
 
-    @OneToMany
-    private List<Phone> phones;
+    @OneToMany(mappedBy = "employee")
+    private List<EmployeePhone> phones;
 }
