@@ -1,10 +1,12 @@
 package br.unioeste.so_manager.so_manager.email;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
+import lombok.*;
 
-@MappedSuperclass
-public abstract class Email {
+@Embeddable
+@AllArgsConstructor @NoArgsConstructor
+@Data @ToString @Builder
+public class Email {
     @Column(unique = true)
     private String address;
 }

@@ -1,4 +1,4 @@
-package br.unioeste.so_manager.so_manager.adress;
+package br.unioeste.so_manager.so_manager.address;
 
 import jakarta.persistence.*;
 import lombok.*;
